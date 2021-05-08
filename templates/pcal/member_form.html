@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Member</title>
+</head>
+<body>
+<h1>Create Member</h1>
+<form method="POST">
+    <table>
+        {{form.as_table}}
+        {% csrf_token %}
+    </table>
+    <input type="submit" value="Save">
+</form>
+
+</body>
+</html>

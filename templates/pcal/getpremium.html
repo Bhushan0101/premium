@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Premium Page</title>
+  <link rel="stylesheet" href="{% static 'css/premium.css' %}">
+</head>
+<body>
+<h1> premium To be Paid:</h1>
+<table border="2">
+  <thead>
+  <th>Component Value</th>
+  <th>Value</th>
+  <th>Inserted Date and Time</th>
+  </thead>
+<tr>
+  {% for d in data %}
+  <td>{{d.componentName}}</td>
+  <td>{{d.componentValue}}</td>
+  <td>{{d.selectionDateTime}}</td>
+</tr>
+  {% endfor %}
+  </table>
+
+
+<h1>The premium to paid is : {{premium}} </h1>
+
+</body>
+</html>

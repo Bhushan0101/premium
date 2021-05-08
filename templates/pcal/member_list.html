@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Member List View</title>
+    <link rel="stylesheet" href="{% static 'css/premium.css' %}">
+</head>
+<body>
+<h1>Member Details</h1>
+{% if member_list %}
+<table>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+    {% for mem in member_list %}
+    <tr>
+        <td>{{mem.id}}</td>
+        <td>{{mem.firstName}}</td>
+        <td>{{mem.lastName}}</td>
+        <td>{{mem.age}}</td>
+        <td><a href="/update/{{mem.id}}">Update </a></td>
+        <td><a href="/delete/{{mem.id}}">Delete </a></td>
+        <td><a href="adddata/{{mem.id}}">Add Premium Data </a></td>
+        <td><a href="getreport/{{mem.id}}">Get Premium</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<b>No Members added</b>
+{% endif %}
+<a href="create/"> Add Member </a>
+
+
+</body>
+</html>

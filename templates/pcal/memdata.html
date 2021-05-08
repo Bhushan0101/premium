@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Data</title>
+    <link rel="stylesheet" href="{% static 'css/premium.css' %}">
+</head>
+<body>
+<h2>Member Data</h2>
+First Name: {{member.firstName}} <br>
+Last Name: {{ member.lastName}}<br>
+Age: {{ member.age }}<br>
+<form method="post">
+    <table>
+  {{form.as_p}}
+  {% csrf_token %}
+<input type="submit" value="Save">
+    </table>
+</form>
+
+</body>
+</html>
+
